@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"node browsersync.js\" \"npm run watch\"",
-    "postinstall": "npm run build",
+    "postinstall": "lerna link && lerna bootstrap && npm run build",
     "build": "lerna exec npm run build",
     "watch": "watch 'npm run build' packages/**/src/"
   },
